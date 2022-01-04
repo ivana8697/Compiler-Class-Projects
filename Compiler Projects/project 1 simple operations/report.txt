@@ -1,0 +1,63 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<7-9>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<2>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Using CLEmitter)
+      Approach: I started by stuyding GenIsPrime and looking at appendix D in
+      the book to learn the opcodes and see what I can use.
+
+      Issues and resolution: It was pretty easy to see how to adapt GenFactorial
+      from GenisPrime until I got to the for loop that kind of confused me. I didnt
+      see opcode in the book for booleans so I used the tips from piazza to just use
+      the int to represent boolean. I looked at the bytecode in the hint and could
+      see that "jump to here commands" are used since we cant really implement a for
+      loop with the opcode, a bit similar to the style of coding used in machine
+      language. By looking at the other tests in CLEmitter like GenLookupSwitch.java
+      I saw some examples of how to use the "addLabel" so the goto commands can be
+      directed where you want.
+
+   Problem 2 (Arithmetic Operations)
+      Approach: I used the list we went over in class of all the things I need to
+      chnage in order to add a operator to the compiler.
+
+      Issues and resolution: It was pretty straight forward since in class we already
+      looked at what is needed to add the division operator and I used that as a guide.
+      I made sure to account for the need that the lhs and the rhs were ints where needed
+      and also just the single operand for unary plus that needed to be an int.
+
+   Problem 3 (Bitwise Operations)
+      Approach: I followed the same steps as for the first operators I added.
+
+      Issues and resolution: I ran into some occasional issues with the parser or
+      scanner but it helped to study the code that was already in them to see how
+      things were implemented.
+
+   Problem 4 (Shift Operations)
+      Approach: Same steps as above.
+
+      Issues and resolution: I was a bit unsure on what to do with the parser then from
+      seeing the other methods in the parser I decided to make a new method for shift
+      expressions and include all of the ones for problem 4 in it.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS451/651 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Piazza
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+

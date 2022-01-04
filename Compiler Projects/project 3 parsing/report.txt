@@ -1,0 +1,110 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<20>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<4>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Long and Double Basic Types)
+      Approach: Add doubles and longs to the parser and to types.
+
+      Issues and resolution: This was pretty strightforward I just did not
+      realize that we have to account for basic types and for literals, so after
+      seeing the errors when I ran the test and it said "literal sought where
+      double found" I could see I needed to account for literals and then found
+      and changed that part of the parser. Then I still had something off and
+      knew I needed to be able to tell if was basic or literal and then updated
+      seeBasicType() in the parser to be able to return a boolean so we can tell
+      if it is a basic type or not.
+
+   Problem 2 (Operators):
+      Approach: Add parser support for operators.
+
+      Issues and resolution: I got confused with the levels of the parser on the
+      first assignment and this time I fixed the parser levels and did any
+      additional levels I needed following the java syntax outlines in appendix
+      C of the textbook. Everything was working pretty well except line 20 in
+      the test because I got the error "|| found where ) sought" and this tells
+      me that the parser thinks that for the case "(a == b || b == a);" there is
+      only one comparison to do. I asked about the issue on piazza and then I
+      realized it was just a very simple mistake of not updating a level so
+      "assignmentExpression()" didnt call to my conditional expression then it
+      cant get to ConditionalOrExpression(). I see that every little detail
+      counts!
+
+   Problem 3 (Conditional Expression):
+      Approach: I addressed this part when I was working on 2 because I was
+      trying to make all the levels shown in the text.
+
+      Issues and resolution: Made sure to address how the '?' needs to have a
+      ':' after the right hand expression of '?'.
+
+   Problem 4 (Do Statement):
+      Approach: Do statment is in statment() (also shown in appendix C)
+
+      Issues and resolution: pretty strightforward, just made sure to have while
+      and semi colon.
+
+   Problem 5 (For Statement):
+      Approach: Add for statement into statement(). I added the forInit() and
+      forUpdate() where they needed to go in parser (Apendix C) so that the for
+      statement can return a list for variable declaration if variables are not
+      declared locally.
+
+      Issues and resolution: minor debugging.
+
+   Problem 6 (Break Statement):
+      Approach: Add break statement into statement().
+
+      Issues and resolution: straightforward.
+
+   Problem 7 (Continue Statement):
+      Approach: Add continue statement into statement(), just make sure the
+      syntax is correct with a semicolon after.
+
+      Issues and resolution: straightforward.
+
+   Problem 8 (Switch Statement):
+      Approach: Add switch statement into statement(). Created 
+      switchBlockStatementGroup() in the parser where it should go followed by
+      switchLabel(). Made sure that in switchBlockStatementGroup it parses a
+      block statement until there is a CASE, DEFLT, or RCURLY reached to break
+      the while loop.
+
+      Issues and resolution: minor debugging.
+
+   Problem 9 (Exception Handlers):
+      Approach: Made sure that Try supports catch and finally and that they have
+      the correct syntax. Added support for Throws and made sure to update
+      memberDecl to support Throws in constructor, void method and non void
+      method.
+
+      Issues and resolution: minor debugging.
+
+   Problem 10 (Interface Type Declaration):
+      Approach: I modified type declaration to accept interface
+      declaration an I had to add interfaceDeclaration(), interfaceBody(), and
+      interfaceMemberDecl().
+
+      Issues and resolution: It was mostly just time consuming to add all the
+      details neccesary and debug small issues along the way.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS451/651 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Piazza
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   Appendix C was a really helpful guide to see where to update the parser.

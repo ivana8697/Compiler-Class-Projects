@@ -1,0 +1,132 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<12>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<3>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Part I (Additions to JavaCC Scanner)
+
+   Problem 1 (Multiline Comment)
+      Approach: Similar to single line comment but instead of waiting for an end
+      of line or file char we check for "*/" that ends the multi line comment.
+
+      Issues and resolution: strightforward
+
+   Problem 2 (Operators)
+      Approach: Add support for the operators in the javaCC, similar to how
+      we did in TokenInfo before.
+
+      Issues and resolution: straightforward
+
+   Problem 3 (Reserved Words)
+      Approach: Add support for the reserved words in the javaCC, similar to how
+      we did in TokenInfo before.
+
+      Issues and resolution: I got an error where "Lexical token name "DEFAULT"
+      is the same as that of a lexical state." so I realized it cant be the same
+      as the "DEFAULT" that was used when addrressing the comments in
+      lexical grammar so I made the reserved word "DEFAULT_".
+
+   Problem 4 (Literals)
+      Approach: Similar to what we did in HW2, made sure to account for all the
+      possibilities of a double or long and added a "DIGITS" identifier as a
+      helper to account for multiple digits before a "." etc in doubles. Also
+      account for exponents.
+
+      Issues and resolution: minor debuging
+
+   Part II (Additions to JavaCC Parser)
+
+   Problem 5 (Long and Double Basic Types)
+      Approach: Add long and double into the basic types of the javaCC parser
+      and also to literals.
+
+      Issues and resolution: minor debugging
+
+   Problem 6 (Operators)
+      Approach: Similar to what I did in project 3, I also followed the levels
+      of the parser that are outlined in appendix C. Made sure the syntax was
+      correctly implemented and checked the other levels of the parser that were
+      already implemented.
+
+      Issues and resolution: some minor debugging and syntax issues.
+
+   Problem 7 (Conditional Expression)
+      Approach: Here I made sure to address everything needed within a
+      conditional expression and made sure each operator has what is neccesary
+      on lhs/rhs. Also made sure it goes in level 12 of the parser.
+
+      Issues and resolution: straightforward
+
+   Problem 8 (Do Statement)
+      Approach: Similar to project 3 and Do statment is addressed in statment
+      right after block statment in parser. We need to account for the WHILE and
+      semicolon that is part of the do statment.
+
+      Issues and resolution: straightforward
+
+   Problem 9 (For Statement)
+      Approach: Similar to how I did in project 3, I made sure it parses each
+      part of the for statement. I also made the forInit() and forUpdate()
+      functions that help parse the for statement and put them where they go
+      in the levels of the parser.
+
+      Issues and resolution: some debugging and small syntax errors
+
+   Problem 10 (Break Statement)
+      Approach: Made sure the semicolon gets parsed after break.
+
+      Issues and resolution: straightforward
+
+   Problem 11 (Continue Statement)
+      Approach: Made sure the semicolon gets parsed after continue.
+
+      Issues and resolution: straightforward
+
+   Problem 12 (Switch Statement)
+      Approach: Similar to project 3 I added the switchBlockStatementGroup() and
+      switchLabel() functions to help parse the switch statement and put them
+      where they need to go in parser levels.
+
+      Issues and resolution: small debugging/syntax issues that were easy to
+      resolve following error messages.
+
+   Problem 13 (Exception Handlers)
+      Approach: Just like before added exception handling by adding TRY and
+      THROW statements. Made sure that TRY uses catch or finally. Also added
+      THROWS in memberDecl() and interfaceDecl() just like last time.
+
+      Issues and resolution:
+
+   Problem 14 (Interface Type Declaration)
+      Approach: I started with the same code that was already in memberDecl()
+      and took out the possibility for a body since an interface doesnt need
+      that. Also as in project 3 I made the interface body, interface
+      declaration using the ones for class body/declaration, and added interface
+      declaration to type declaration().
+
+      Issues and resolution: there were some issues I just couldnt figure out
+      that had to do with Extends and Implememts and I ran out of time.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS451/651 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Piazza
+
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   Was a long but straightforward assignment, it was easier because it was very
+   similar to out previous projects.

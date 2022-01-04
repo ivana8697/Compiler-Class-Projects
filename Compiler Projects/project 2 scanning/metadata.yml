@@ -1,0 +1,12 @@
+---
+:id: 67388770
+:submitters:
+- :name: Ivana Licakova
+  :email: ivana.licakova001@umb.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2021-03-01 06:41:37.770944000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2021-02-28 22:41:37.770944000 Z
+:status: processed
+:score: 99.0

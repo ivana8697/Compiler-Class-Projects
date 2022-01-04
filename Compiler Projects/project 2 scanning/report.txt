@@ -1,0 +1,82 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<12>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<4>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Multiline Comment)
+      Approach: Drawing the state transition diagram helped me visualize how to
+      loop through the comment.
+
+      Issues and resolution: I was a bit unsure what to use in a while loop
+      that goes through the chars of a comment, at first I thought to do
+      something along the lines "while has next char, check for '*' then '/'"
+      and I figured another way to do that from looking at how the one line
+      comment was written but using only the "while char not end of line char".
+      This will loop through chars as long as the char is not end of file char.
+      Then I just need to check if the char is '*' AND check if the following
+      char is "/" to confirm the end of the comment then we can break out of
+      the while loop.
+
+   Problem 2 (Operators)
+      Approach: I added the tokens that we dont have in Tokeninfo, then I
+      updated the scanner to recognize those operators.
+
+      Issues and resolution: It was strightfoward but I ran into a few minor
+      errors with the cases that were more complex like everything under "<".
+      I just debugged from the errors when trying to compile and added comments
+      to make it more clear what each if statment identifies. I was a bit
+      confused about '?' since this symbol is for conditional operator and it
+      requires a ':' with it to complete it, so I thought ':' would be an if
+      statment under '?' but then I realized that isnt something the scanner
+      handles since we need to also take into account the values on the lhs and
+      rhs etc, so it isnt like the comments where we just ignore and find the
+      ending char, for dealing with this we would use the parser. So for the
+      scanner it just needs to recognize the separate symbols. 
+
+   Problem 3 (Reserved Words)
+      Approach: Add to Tokeninfo, then update the scanner to recognize them.
+
+      Issues and resolution: This part was pretty strightforward I was just
+      adding to the existing reserved words in Tokeninfo and then adding to
+      the hashtable of reserved words in Scanner.
+
+   Problem 4 (Literals)
+      Approach: Add to literals in Tokeninfo, then in the Scanner implement
+      code to recognize doubles and longs. We know in the process of scanning an
+      Integer a letter coming after the numbers indicates the end of the integer
+      but we use l or L to indicate the Long literal or d/D to indicate a Double
+      literal. We also know that if there is a decimal point "." this indicates
+      a double so I modified the code for case '.' to check for numbers after
+      the '.' to help identify a double. I also used scanning for e/E to help
+      identify exponent which identifies a double. After the cases for the
+      numbers 0-9 we can use the buffer to check for the next chars and if we
+      identify something like e,E,d,D,. that indicates a double we can return
+      that info.
+
+      Issues and resolution: There was some debugging I had to do because I had
+      a bit of repetative code and my scanner was splitting things up instead of
+      taking everything from beginning to end of nummbers + decimal + numbers
+      for example. It just took a lot of time to adress all the places where you
+      can identify a double.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS451/651 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Piazza
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ...

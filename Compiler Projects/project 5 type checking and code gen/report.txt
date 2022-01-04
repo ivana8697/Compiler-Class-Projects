@@ -1,0 +1,121 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<<20>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<5>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Long and Double Basic Types)
+      Approach: I made sure to skip the offset needed for longs and doubles. I
+      made sure to remove the "l" or "L" suffix that indicated a long. I made
+      sure to add converters and edit the Type.java file to include BOXED_DOUBLE
+      and BOXED_LONG. I followed the steps and it seemed pretty ok.
+
+      Issues and resolution: I had some issues with the second test though and
+      I really coundt figure out what the issue was. I though perhaps if I
+      finished later problems that it would work but I always have a weird
+      error when it reaches the array after double and says "[ found where
+      <IDENTIFIER> sought" and I tried to find the issue in the ArrayInitializer
+      or ArrayExpression but nothing worked and I ran out of time.
+
+   Problem 2 (Operators)
+      Approach: I made sure to check that the operand types of each operation
+      are the ones required.
+
+      Issues and resolution: This one was long but not too bad. I had issues
+      because I didnt add BOXED_DOUBLE and also implement the new convertors
+      but I checked piazza and saw that it was a mistake that people were
+      having and it helped me fix my issues.
+
+   Problem 3 (Conditional Expression)
+      Approach: This one was pretty strightforward and I made sure to check the
+      condition is a boolean, and that the consequent and alternate have the
+      same type.
+
+      Issues and resolution: minor debugging issues
+
+   Problem 4 (Do Statement)
+      Approach: This one was strightforward and I used the while statement as
+      a guide. I also needed to make sure the condition is a bolean.
+
+      Issues and resolution: minor debugging
+
+   Problem 5 (For Statement)
+      Approach: Here I made sure to check each part of the for loop
+      is not null since there can still be an effective for loop thats empty.
+
+      Issues and resolution: I had to make sure the labels were in the correct
+      place in codegen and checked that parts of the for loop were not null.
+
+   Problem 6 (Break Statement)
+      Approach: I followed the hints as a guide.
+
+      Issues and resolution: I wasnt sure how to access the enclosed statement's
+      hasBreak boolean value, but then I figured I need some kind of setter 
+      function and the only way I can access the statement I need is by using
+      something like a header file or a way to reach any of them which I can do
+      through JStatement since all of them are statements and extend JStatement.
+      So I added a setter function in JStatement. I also added a getter in
+      JStatement to give access to the breakLabel. Then when I uploaded to
+      gradescope I saw that I cannot change JStatement as it is not one of the
+      files to upload. I asked a question on Piazza about it and got very
+      helpful feedback that I followed and now implemented the getters/setters
+      instead in each of the statement types and used instanceOf to check what
+      type enclosingStatement was and then called the helpers.
+
+   Problem 7 (Continue Statement)
+      Approach: This problem I did similar to the break statement and used the
+      stack and getters/setters to update hasContinue and continueLabel.
+
+      Issues and resolution: I was having some random issues with this that I
+      think had to do with the labels so I was playing around with the label
+      locations and nothing changed but after I moved the GOTO instruction
+      inside of each check in codegen of JContinue instead of outside and only
+      once, then it all worked.
+
+   Problem 8 (Switch Statement)
+      Approach:
+
+      Issues and resolution: I was struggling with this problem in dealing
+      with the default case and getting the neccesary lists for the CLEmitter
+      methods. I couldnt finish this part.
+
+   Problem 9 (Exception Handlers)
+      Approach: Implement Throw and Try and modify constructor and method
+      declaration so they have the list of exceptions in their codegen.
+
+      Issues and resolution: I was a bit stuck on how to convert the exceptions
+      from TypeName to String and then I looked up the TypeName class in
+      Type.java and found that it has a jvmName() function that will return a
+      String of the jvm name. The analyze of Try I had to change around since
+      I was getting null pointer issues and from advice I saw on piazza I used
+      the resolve() method to fix the types.
+
+   Problem 10 (Interface Type Declaration)
+      Approach: Made sure update the parser as neccesary. I needed to convert
+      the list of implemented interfaces to a list of Strings and I used
+      something similar to what I did in problem 9. For the
+      JInterfaceDeclaration I used pretty much what was in JClassDeclaration and
+      left out the unneccesary parts of it.
+
+      Issues and resolution: Minor debugging
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS451/651 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Piazza
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ...
